@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "CodeSync Pro",
+    "description": "Plataforma de colaboración en tiempo real para equipos de desarrollo. Comparte, revisa y despliega código sin fricciones.",
+    "image": "/product.jpeg",
+    "section": "Desarrollo",
+    "price": 29.99
+  },
+  {
+    "id": 2,
+    "name": "TaskFlow Manager",
+    "description": "Organiza tus proyectos con flujos de trabajo inteligentes, tableros Kanban y recordatorios automáticos.",
+    "image": "/product.jpeg",
+    "section": "Productividad",
+    "price": 14.99
+  },
+  {
+    "id": 3,
+    "name": "UI Snippets Library",
+    "description": "Biblioteca de componentes de interfaz listos para usar, compatibles con React, Vue y Svelte.",
+    "image": "/product.jpeg",
+    "section": "Diseño UI/UX",
+    "price": 19.00
+  },
+  {
+    "id": 4,
+    "name": "DeployMate CLI",
+    "image": "/product.jpeg",
+    "section": "DevOps",
+    "price": 9.99
+  },
+  {
+    "id": 5,
+    "name": "SEO Insight Pro",
+    "image": "/product.jpeg",
+    "section": "Marketing",
+    "price": 24.90
+  },
+  {
+    "id": 6,
+    "name": "PDF Wizard SDK",
+    "image": "/product.jpeg",
+    "section": "Herramientas de Desarrollo",
+    "price": 12.50
+  }
+]
