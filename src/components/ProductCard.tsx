@@ -6,11 +6,11 @@ interface Props {
 
 const ProductCard = ({ product }: Props) => {
   return (
-    <div className="cursor-pointer bg-white shadow rounded p-4 text-center">
+    <div className="cursor-pointer bg-white shadow rounded p-4">
       <img
         src={product.image}
         alt={product.name}
-        className="w-full h-40 object-cover mb-4 rounded"
+        className="w-full h-40 object-center mb-4 rounded"
       />
       <h3 className="font-semibold">{product.name}</h3>
       {product.description && (

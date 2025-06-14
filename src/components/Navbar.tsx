@@ -5,14 +5,14 @@ const Navbar = () => {
 
   return (
     <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-      <nav className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <div className="text-xl font-bold text-gray-800">TechX</div>
+      <nav className="max-w-6xl mx-auto px-4 py-5 flex justify-between items-center">
+        <p className="text-xl font-bold text-gray-800">TechX</p>
         <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
           <li><a href="#productos" className="hover:text-blue-600">Productos</a></li>
           <li><a href="#contacto" className="hover:text-blue-600">Contacto</a></li>
         </ul>
 
-        {/* Hamburguesa móvil */}
+        {/* menu icon móvil */}
         <button
           className="md:hidden text-gray-800"
           onClick={() => setIsOpen(!isOpen)}

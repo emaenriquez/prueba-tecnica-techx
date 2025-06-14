@@ -17,7 +17,7 @@ const ProductList = () => {
   );
 
   return (
-    <section className="flex flex-col md:flex-row mt-10 gap-6">
+    <section className="flex flex-col md:flex-row mt-10 gap-6 items-start">
       <Filters
         search={search}
         setSearch={setSearch}

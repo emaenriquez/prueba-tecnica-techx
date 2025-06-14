@@ -43,12 +43,10 @@ const ContactUs: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-
-      <form className="flex flex-wrap gap-5 w-full p-6 bg-white shadow-md rounded" onSubmit={handleSubmit}>
+    <div className="flex items-center justify-center min-h-screen  mt-3">
+      <form className="flex flex-wrap gap-5 w-full max-w-4xl p-6 bg-white shadow-md rounded" onSubmit={handleSubmit}>
         <h2 className="w-full text-2xl font-bold mb-4">Contacto</h2>
-        
-        <div className="flex-1 min-w-[45%]">
+        <div className="flex-1 min-w-[100%] sm:min-w-[45%]">
           <label htmlFor="name" className="block mb-2">Nombre</label>
           <input
             type="text"
@@ -61,7 +59,7 @@ const ContactUs: React.FC = () => {
           {errors.name && <span className="text-red-500 text-sm">{errors.name}</span>}
         </div>
 
-        <div className="flex-1 min-w-[45%]">
+        <div className="flex-1 min-w-[100%] sm:min-w-[45%]">
           <label htmlFor="email" className="block mb-2">Gmail</label>
           <input
             type="email"
@@ -73,7 +71,8 @@ const ContactUs: React.FC = () => {
           />
           {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
         </div>
-        <div className="flex-1 min-w-[45%]">
+
+        <div className="flex-1 min-w-[100%] sm:min-w-[45%]">
           <label htmlFor="phone" className="block mb-2">Numero de telefono</label>
           <input
             type="tel"
@@ -85,7 +84,8 @@ const ContactUs: React.FC = () => {
           />
           {errors.phone && <span className="text-red-500 text-sm">{errors.phone}</span>}
         </div>
-        <div className="flex-1 min-w-[45%]">
+
+        <div className="flex-1 min-w-[100%] sm:min-w-[45%]">
           <label htmlFor="message" className="block mb-2">Mensaje</label>
           <textarea
             id="message"
@@ -96,6 +96,7 @@ const ContactUs: React.FC = () => {
           ></textarea>
           {errors.message && <span className="text-red-500 text-sm">{errors.message}</span>}
         </div>
+
         <button
           type="submit"
           className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed"

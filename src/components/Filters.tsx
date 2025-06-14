@@ -10,15 +10,14 @@ interface FiltersProps {
 const Filters: React.FC<FiltersProps> = ({ search, setSearch, sortAsc, setSortAsc }) => {
   return (
     <aside className="w-full md:w-1/4">
-      <h2 className="text-lg font-semibold mb-2">Filter</h2>
+      <h2 className="text-lg font-semibold mb-2 ">Filtrar productos</h2>
       <input
         type="text"
-        placeholder="Search..."
-        className="w-full border px-3 py-2 rounded mb-4"
+        placeholder="Buscar productos..."
+        className="w-full border px-3 py-2 rounded mb-4 outline-0"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <h2 className="text-lg font-semibold mb-2">Sort</h2>
       <div className="flex items-center gap-2">
         <input
           type="checkbox"
@@ -26,7 +25,7 @@ const Filters: React.FC<FiltersProps> = ({ search, setSearch, sortAsc, setSortAs
           checked={sortAsc}
           onChange={() => setSortAsc(!sortAsc)}
         />
-        <label htmlFor="sortPrice">Sort by Price (Asc/Desc)</label>
+        <label htmlFor="sortPrice">Ordenar precio (Asc/Desc)</label>
       </div>
     </aside>
   );
