@@ -1,23 +1,13 @@
-import { useState, useEffect } from "react";
-import productsData from "../data/products.json";
+import { useState } from "react";
 import ProductCard from "./ProductCard";
-import { type Product } from "../types/product";
+import Filters from "./Filters";
+import useFilteredProducts from "../utils/useFilteredProducts";
 
 const ProductList = () => {
   const [search, setSearch] = useState("");
-  const [filtered, setFiltered] = useState<Product[]>([]);
   const [sortAsc, setSortAsc] = useState(true);
 
-  useEffect(() => {
-    let results = productsData.filter((product) =>
-      product.name.toLowerCase().includes(search.trim().toLowerCase())
-    );
-
-    results = results.sort((a, b) =>
-      sortAsc ? a.price - b.price : b.price - a.price
-    );
-    setFiltered(results);
-  }, [search, sortAsc]);
+  const filtered = useFilteredProducts(search, sortAsc);
 
   const productNameItems = filtered.filter(
     (p) => p.image && p.name && p.description
@@ -28,26 +18,12 @@ const ProductList = () => {
 
   return (
     <section className="flex flex-col md:flex-row mt-10 gap-6">
-      {/* Filtro */}
-      <aside className="w-full md:w-1/4">
-        <h2 className="text-lg font-semibold mb-2">Filter</h2>
-        <input
-          type="text"
-          placeholder="Search..."
-          className="w-full border px-3 py-2 rounded mb-4"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <div className="flex items-center gap-2">
-          <input
-            type="checkbox"
-            id="sortPrice"
-            checked={sortAsc}
-            onChange={() => setSortAsc(!sortAsc)}
-          />
-          <label htmlFor="sortPrice">Precio (Asc/Desc)</label>
-        </div>
-      </aside>
+      <Filters
+        search={search}
+        setSearch={setSearch}
+        sortAsc={sortAsc}
+        setSortAsc={setSortAsc}
+      />
 
       {/* Productos */}
       <div className="w-full md:w-3/4 flex flex-col gap-10">

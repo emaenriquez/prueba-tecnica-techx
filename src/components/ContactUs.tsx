@@ -9,35 +9,47 @@ const ContactUs: React.FC = () => {
   });
 
   const [errors, setErrors] = useState({
+    name: '',
     email: '',
+    phone: '',
     message: '',
   });
+
+  const isFormValid = formData.name.length > 3 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
+    /^[0-9]{10}$/.test(formData.phone) && formData.message.length > 0;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    const newErrors = { ...errors };
+    if (name === 'name') {
+      newErrors.name = value.length > 3 ? '' : 'El nombre tiene que tener al menos 3 caracteres.';
+    } else if (name === 'email') {
+      newErrors.email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? '' : 'Email formato invalido';
+    } else if (name === 'phone') {
+      newErrors.phone = /^[0-9]{10}$/.test(value) ? '' : 'numero de telefono invalido, debe tener 10 digitos';
+    } else if (name === 'message') {
+      newErrors.message = value.length > 0 ? '' : 'Mensaje es requerido';
+    }
+    setErrors(newErrors);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const newErrors = {
-      email: formData.email ? '' : 'Email is required.',
-      message: formData.message ? '' : 'Message is required.',
-    };
-    setErrors(newErrors);
-
-    if (!newErrors.email && !newErrors.message) {
+    if (isFormValid) {
       alert('Form submitted successfully!');
-      // Aquí puedes enviar los datos al servidor
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen ">
+    <div className="flex items-center justify-center min-h-screen">
+
       <form className="flex flex-wrap gap-5 w-full p-6 bg-white shadow-md rounded" onSubmit={handleSubmit}>
-        <h2 className="w-full text-2xl font-bold mb-4">Contact Us</h2>
+        <h2 className="w-full text-2xl font-bold mb-4">Contacto</h2>
+        
         <div className="flex-1 min-w-[45%]">
-          <label htmlFor="name" className="block mb-2">Name</label>
+          <label htmlFor="name" className="block mb-2">Nombre</label>
           <input
             type="text"
             id="name"
@@ -46,9 +58,11 @@ const ContactUs: React.FC = () => {
             onChange={handleChange}
             className="w-full p-2 mb-2 border border-gray-300 rounded"
           />
+          {errors.name && <span className="text-red-500 text-sm">{errors.name}</span>}
         </div>
+
         <div className="flex-1 min-w-[45%]">
-          <label htmlFor="email" className="block mb-2">Email</label>
+          <label htmlFor="email" className="block mb-2">Gmail</label>
           <input
             type="email"
             id="email"
@@ -60,7 +74,7 @@ const ContactUs: React.FC = () => {
           {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
         </div>
         <div className="flex-1 min-w-[45%]">
-          <label htmlFor="phone" className="block mb-2">Phone Number</label>
+          <label htmlFor="phone" className="block mb-2">Numero de telefono</label>
           <input
             type="tel"
             id="phone"
@@ -69,9 +83,10 @@ const ContactUs: React.FC = () => {
             onChange={handleChange}
             className="w-full p-2 mb-2 border border-gray-300 rounded"
           />
+          {errors.phone && <span className="text-red-500 text-sm">{errors.phone}</span>}
         </div>
         <div className="flex-1 min-w-[45%]">
-          <label htmlFor="message" className="block mb-2">Message</label>
+          <label htmlFor="message" className="block mb-2">Mensaje</label>
           <textarea
             id="message"
             name="message"
@@ -83,9 +98,10 @@ const ContactUs: React.FC = () => {
         </div>
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+          disabled={!isFormValid}
         >
-          Submit
+          Enviar
         </button>
       </form>
     </div>

@@ -6,12 +6,8 @@ const Navbar = () => {
   return (
     <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
       <nav className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        
         <div className="text-xl font-bold text-gray-800">TechX</div>
-
         <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
-          <li><a href="#inicio" className="hover:text-blue-600">Inicio</a></li>
-          <li><a href="#sobre" className="hover:text-blue-600">Sobre TechX</a></li>
           <li><a href="#productos" className="hover:text-blue-600">Productos</a></li>
           <li><a href="#contacto" className="hover:text-blue-600">Contacto</a></li>
         </ul>
@@ -41,8 +37,6 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white shadow-lg px-4 pb-4">
           <ul className="space-y-2 text-gray-700 font-medium">
-            <li><a href="#inicio" onClick={() => setIsOpen(false)}>Inicio</a></li>
-            <li><a href="#sobre" onClick={() => setIsOpen(false)}>Sobre TechX</a></li>
             <li><a href="#productos" onClick={() => setIsOpen(false)}>Productos</a></li>
             <li><a href="#contacto" onClick={() => setIsOpen(false)}>Contacto</a></li>
           </ul>
