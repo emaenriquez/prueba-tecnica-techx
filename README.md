@@ -1,54 +1,56 @@
-# React + TypeScript + Vite
+# TECHX INTERNSHIP TEST
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Instalación y ejecución
 
-Currently, two official plugins are available:
+1. Clona el repositorio o descarga el código fuente.
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+   El proyecto estará disponible en `http://localhost:5173` (o el puerto que indique la terminal).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Scripts útiles
 
-## Expanding the ESLint configuration
+- `npm install`: Instala todas las dependencias del proyecto.
+- `npm run dev`: Inicia el servidor de desarrollo con Vite.
+- `npm test`: Ejecuta las pruebas unitarias con Jest.
+- `npm test -- --coverage`: Ejecuta las pruebas y muestra el reporte de cobertura.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Decisiones técnicas
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **React + TypeScript**: Para una mejor experiencia de desarrollo y tipado estático.
+- **Vite**: Herramienta de desarrollo rápida y moderna para proyectos React.
+- **Tailwind CSS**: Utilizado para estilos rápidos y responsivos.
+- **Jest + React Testing Library**: Para pruebas unitarias de componentes y lógica.
+- **Estructura modular**: Los filtros y lógica de productos están separados en componentes y hooks personalizados para mayor mantenibilidad.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Pruebas unitarias
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Las pruebas unitarias están ubicadas junto a los componentes o funciones que prueban, usando el sufijo `.test.tsx` o `.test.ts`.
+- Para ejecutar las pruebas:
+  ```bash
+  npm test
+  ```
+- Para ver el reporte de cobertura:
+  ```bash
+  npm test -- --coverage
+  ```
+- El objetivo de cobertura es **>= 80%** en los módulos probados.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Notas adicionales
+
+- Si tienes problemas con la configuración de Jest y TypeScript, revisa que el archivo `tsconfig.jest.json` tenga:
+  ```json
+  {
+    "extends": "./tsconfig.app.json",
+    "compilerOptions": {
+      "module": "commonjs",
+      "verbatimModuleSyntax": false
+    }
+  }
+  ```
+- Si necesitas limpiar los reportes de cobertura, puedes borrar la carpeta `coverage`.
