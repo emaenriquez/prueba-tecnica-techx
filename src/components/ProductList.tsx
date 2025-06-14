@@ -17,34 +17,47 @@ const ProductList = () => {
   );
 
   return (
-    <section className="flex flex-col md:flex-row mt-10 gap-6 items-start">
-      <Filters
-        search={search}
-        setSearch={setSearch}
-        sortAsc={sortAsc}
-        setSortAsc={setSortAsc}
-      />
+    <section className="flex flex-col md:flex-row mt-10 gap-6">
+      {/* Filtros */}
+        <Filters
+          search={search}
+          setSearch={setSearch}
+          sortAsc={sortAsc}
+          setSortAsc={setSortAsc}
+        />
 
       {/* Productos */}
       <div className="w-full md:w-3/4 flex flex-col gap-10">
         {/* Sección Product Name */}
         <div>
           <h2 className="text-2xl font-bold mb-4">Product Name</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {productNameItems.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+          {productNameItems.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {productNameItems.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-gray-500">
+              No hay productos disponibles.
+            </p>
+          )}
         </div>
 
         {/* Sección Product Us */}
         <div>
           <h2 className="text-2xl font-bold mb-4">Product Us</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {productUsItems.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+          {productUsItems.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {productUsItems.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-gray-500">
+              No hay productos disponibles.
+            </p>
+          )}
         </div>
       </div>
     </section>
