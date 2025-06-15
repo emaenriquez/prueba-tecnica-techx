@@ -1,47 +1,41 @@
 [
   {
     "id": 1,
-    "name": "CodeSync Pro",
-    "description": "Plataforma de colaboración en tiempo real para equipos de desarrollo. Comparte, revisa y despliega código sin fricciones.",
+    "name": "Curso de ingles",
+    "description": "Curso completo para aprender inglés desde nivel básico hasta avanzado.",
     "image": "/product.jpeg",
-    "section": "Desarrollo",
     "price": 29.99
   },
   {
     "id": 2,
-    "name": "TaskFlow Manager",
-    "description": "Organiza tus proyectos con flujos de trabajo inteligentes, tableros Kanban y recordatorios automáticos.",
-    "image": "/product.jpeg",
-    "section": "Productividad",
+    "name": "Git diagram",
+    "description": "Herramienta visual para crear y entender diagramas de flujos en Git.",
+    "image": "/product_git_diagram.jpeg",
     "price": 14.99
   },
   {
     "id": 3,
-    "name": "UI Snippets Library",
-    "description": "Biblioteca de componentes de interfaz listos para usar, compatibles con React, Vue y Svelte.",
-    "image": "/product.jpeg",
-    "section": "Diseño UI/UX",
-    "price": 19.00
+    "name": "Flexbox labs",
+    "description": "Laboratorio interactivo para practicar y dominar CSS Flexbox.",
+    "image": "/product_flexbox_labs.png",
+    "price": 19.99
   },
   {
     "id": 4,
-    "name": "DeployMate CLI",
-    "image": "/product.jpeg",
-    "section": "DevOps",
+    "name": "Date format",
+    "image": "/product_date_format.jpeg",
     "price": 9.99
   },
   {
     "id": 5,
-    "name": "SEO Insight Pro",
-    "image": "/product.jpeg",
-    "section": "Marketing",
+    "name": "Pseudo Flow",
+    "image": "/product_pseudo_flow.jpeg",
     "price": 24.90
   },
   {
     "id": 6,
-    "name": "PDF Wizard SDK",
-    "image": "/product.jpeg",
-    "section": "Herramientas de Desarrollo",
+    "name": "Astro ",
+    "image": "/product_astro.jpeg",
     "price": 12.50
   }
 ]

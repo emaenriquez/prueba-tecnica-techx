@@ -6,15 +6,14 @@ interface Props {
 
 const ProductCard = ({ product }: Props) => {
   return (
-    <div className="cursor-pointer bg-white shadow rounded p-4">
-      <img
-        src={product.image}
-        alt={product.name}
-        className="w-full h-40 object-center mb-4 rounded"
-      />
-      <h3 className="font-semibold">{product.name}</h3>
+    <div className="card p-4 rounded-lg shadow bg-white">
+      <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded" />
+      <div className="flex justify-between items-center mt-4">
+        <h3 className="text-lg font-bold">{product.name}</h3>
+        <span className="text-xl font-semibold">${product.price}</span>
+      </div>
       {product.description && (
-        <p className="text-sm text-gray-500">{product.description}</p>
+        <p className="mt-2 text-gray-600">{product.description}</p>
       )}
     </div>
   );

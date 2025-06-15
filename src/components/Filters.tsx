@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface FiltersProps {
   search: string;
   setSearch: (value: string) => void;
@@ -10,11 +8,11 @@ interface FiltersProps {
 const Filters: React.FC<FiltersProps> = ({ search, setSearch, sortAsc, setSortAsc }) => {
   return (
     <aside className="w-full md:w-1/4">
-      <h2 className="text-lg font-semibold mb-2 ">Filtrar productos</h2>
+      <h2 className="text-lg font-semibold mb-2">Filtrar productos</h2>
       <input
         type="text"
         placeholder="Buscar productos..."
-        className="w-full border px-3 py-2 rounded mb-4 outline-0"
+        className="w-full border px-3 py-2 border-gray-300 rounded mb-4 outline-0"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />

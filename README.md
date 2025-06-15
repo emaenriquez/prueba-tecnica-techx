@@ -1,17 +1,33 @@
-# TECHX INTERNSHIP TEST
+# TECHX INTERNSHIP TEST - Documentación del Proyecto
 
-## Instalación y ejecución
+## Descripción del Proyecto
+Este proyecto es una aplicación React desarrollada como parte del proceso de selección para TECHX. Implementa un sistema de visualización y filtrado de productos con interfaz responsive, pruebas unitarias
 
-1. Clona el repositorio o descarga el código fuente.
-2. Instala las dependencias:
-   ```bash
-   npm install
-   ```
-3. Inicia el servidor de desarrollo:
-   ```bash
-   npm run dev
-   ```
-   El proyecto estará disponible en `http://localhost:5173` (o el puerto que indique la terminal).
+## [🌐 Ver Demo en Vivo](https://prueba-tecnica-techx.vercel.app/)
+
+## Tecnologias utilizadas
+
+- **React + TypeScript**: Para una mejor experiencia de desarrollo y tipado estático.
+- **Vite**: Herramienta de desarrollo rápida y moderna para proyectos React.
+- **Tailwind CSS**: Utilizado para estilos rápidos y responsivos.
+- **Jest + Testing Library**: Para pruebas unitarias de componentes y lógica.
+
+Pasos para configurar el proyecto
+
+1. Clonar el repositorio
+ ```bash
+  git clone https://github.com/emaenriquez/prueba-tecnica-techx
+  cd prueba-tecnica-techx
+```
+1. Instala las dependencias:
+```bash
+  npm install
+```
+1. Inicia el servidor de desarrollo:
+```bash
+  npm run dev
+```
+El proyecto estará disponible en `http://localhost:5173` (o el puerto que indique la terminal).
 
 ## Scripts útiles
 
@@ -20,37 +36,30 @@
 - `npm test`: Ejecuta las pruebas unitarias con Jest.
 - `npm test -- --coverage`: Ejecuta las pruebas y muestra el reporte de cobertura.
 
-## Decisiones técnicas
-
-- **React + TypeScript**: Para una mejor experiencia de desarrollo y tipado estático.
-- **Vite**: Herramienta de desarrollo rápida y moderna para proyectos React.
-- **Tailwind CSS**: Utilizado para estilos rápidos y responsivos.
-- **Jest + React Testing Library**: Para pruebas unitarias de componentes y lógica.
-- **Estructura modular**: Los filtros y lógica de productos están separados en componentes y hooks personalizados para mayor mantenibilidad.
-
-## Pruebas unitarias
-
-- Las pruebas unitarias están ubicadas junto a los componentes o funciones que prueban, usando el sufijo `.test.tsx` o `.test.ts`.
-- Para ejecutar las pruebas:
-  ```bash
-  npm test
-  ```
-- Para ver el reporte de cobertura:
-  ```bash
-  npm test -- --coverage
-  ```
-- El objetivo de cobertura es **>= 80%** en los módulos probados.
-
-## Notas adicionales
-
-- Si tienes problemas con la configuración de Jest y TypeScript, revisa que el archivo `tsconfig.jest.json` tenga:
-  ```json
-  {
-    "extends": "./tsconfig.app.json",
-    "compilerOptions": {
-      "module": "commonjs",
-      "verbatimModuleSyntax": false
-    }
-  }
-  ```
-- Si necesitas limpiar los reportes de cobertura, puedes borrar la carpeta `coverage`.
+## Estructura del proyecto
+```bash
+PRUEBATECNICA/
+├── public/                    # Archivos públicos
+├── src/
+│   ├── assets/                # Recursos estáticos
+│   │   └── react.svg
+│   ├── components/            # Componentes reutilizables
+│   │   ├── ContactUs.tsx          # Formulario de contacto
+│   │   ├── ContactUs.test.tsx     # Pruebas del formulario
+│   │   ├── Filters.tsx            # Filtro de productos
+│   │   ├── Navbar.tsx             # Barra de navegación
+│   │   ├── ProductCard.tsx        # Tarjeta individual de producto
+│   │   └── ProductList.tsx        # Lista de productos
+│   ├── data/
+│   │   └── products.json          # Datos estáticos de productos
+│   ├── types/
+│   │   └── product.ts             # Tipado del producto
+│   ├── utils/
+│   │   └── regex.ts               # Expresiones regulares de validación
+│   |   └── useFilteredProducts.ts     # Hook personalizado para filtrado
+|── App.tsx                    # Componente raíz
+│── index.css                  # Estilos globales
+│── main.tsx                   # Punto de entrada principal
+│── setupTests.ts              # Configuración de Testing Library
+├── vite-env.d.ts  # Tipado de entorno Vite
+```

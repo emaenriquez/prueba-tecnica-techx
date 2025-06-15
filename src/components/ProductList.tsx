@@ -28,9 +28,9 @@ const ProductList = () => {
 
       {/* Productos */}
       <div className="w-full md:w-3/4 flex flex-col gap-10">
-        {/* Sección Product Name */}
+        {/* Sección productos disponibles */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">Product Name</h2>
+          <h2 className="text-2xl font-bold mb-4">Nuestros productos disponibles</h2>
           {productNameItems.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {productNameItems.map((product) => (
@@ -44,9 +44,9 @@ const ProductList = () => {
           )}
         </div>
 
-        {/* Sección Product Us */}
+        {/* Sección catalogo de productos */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">Product Us</h2>
+          <h2 className="text-2xl font-bold mb-4">Catálogo de productos</h2>
           {productUsItems.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {productUsItems.map((product) => (

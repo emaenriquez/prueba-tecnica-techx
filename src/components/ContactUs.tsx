@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { EMAIL_REGEX, PHONE_REGEX } from '../utils/regex';
 
 const ContactUs: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -15,8 +16,8 @@ const ContactUs: React.FC = () => {
     message: '',
   });
 
-  const isFormValid = formData.name.length > 3 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
-    /^[0-9]{10}$/.test(formData.phone) && formData.message.length > 0;
+  const isFormValid = formData.name.length > 3 && EMAIL_REGEX.test(formData.email) &&
+    PHONE_REGEX.test(formData.phone) && formData.message.length > 0;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -26,9 +27,9 @@ const ContactUs: React.FC = () => {
     if (name === 'name') {
       newErrors.name = value.length > 3 ? '' : 'El nombre tiene que tener al menos 3 caracteres.';
     } else if (name === 'email') {
-      newErrors.email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? '' : 'Email formato invalido';
+      newErrors.email = EMAIL_REGEX.test(value) ? '' : 'Email formato invalido';
     } else if (name === 'phone') {
-      newErrors.phone = /^[0-9]{10}$/.test(value) ? '' : 'numero de telefono invalido, debe tener 10 digitos';
+      newErrors.phone = PHONE_REGEX.test(value) ? '' : 'numero de telefono invalido, debe tener 10 digitos';
     } else if (name === 'message') {
       newErrors.message = value.length > 0 ? '' : 'Mensaje es requerido';
     }
@@ -43,7 +44,7 @@ const ContactUs: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen  mt-3">
+    <div className="flex items-center justify-center min-h-screen px-4">
       <form className="flex flex-wrap gap-5 w-full max-w-4xl p-6 bg-white shadow-md rounded" onSubmit={handleSubmit}>
         <h2 className="w-full text-2xl font-bold mb-4">Contacto</h2>
         <div className="flex-1 min-w-[100%] sm:min-w-[45%]">
