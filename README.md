@@ -1,7 +1,7 @@
 # TECHX INTERNSHIP TEST - Documentación del Proyecto
 
 ## Descripción del Proyecto
-Este proyecto es una aplicación React desarrollada como parte del proceso de selección para TECHX. Implementa un sistema de visualización y filtrado de productos con interfaz responsive, pruebas unitarias
+Este proyecto es una aplicación React desarrollada como parte del proceso de selección para TECHX. 
 
 ## [🌐 Ver Demo en Vivo](https://prueba-tecnica-techx.vercel.app/)
 
